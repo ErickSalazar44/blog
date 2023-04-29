@@ -1,0 +1,368 @@
+
+:root {
+    --bg: #ffffff;
+    --color: #fffcf2;
+    --navBar: #fffcf2;
+    --zindex: 100;
+    --zIndexNavBar: 1000;
+    --h_header: 70px;
+    --modonocheFondo: #003049;
+    --text: #000000;
+    --btn: #e29578;
+    --btnActive: antiquewhite;
+    --color-btn: #403d39;
+    --color-btnHover: #ccc5b9; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7rem;
+    scroll-margin-top: calc(var(--h_header) + 10px);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: #ccc5b9;
+}
+
+
+img {
+    width: 100%;
+    display: block;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.5s;
+}
+
+.modoNoche {
+    --bg: #252422;
+    --navBar: #403d39;
+    --text: #fffcf2;
+    --btnActive: #e29578;
+    --btn: antiquewhite;
+    --color-btn: antiquewhite;
+    --color-btnHover:#403d39  ; 
+}
+
+
+.content-navbar {
+    background-color: transparent;
+    position: fixed;
+    z-index: var(--zIndexNavBar);
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: background-color 0.5s;
+}
+
+.content-navbar--scroll {
+    background-color: var(--navBar);
+}
+
+
+.menu {
+    background-color: var(--navBar);
+    position: fixed;
+    right: 0;
+    top: var(--h_header);
+    width: 40%;
+    height: calc(100vh - var(--h_header));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: right 0.6s;
+}
+
+.menu-show {
+    right: -100%;
+}
+
+
+.navbar {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: var(--h_header);
+    color: var(--bg);
+    transition: background-color 0.5s;
+}
+
+.navbar--scroll {
+    --h_header: 80px;
+}
+
+.icon-son,
+.icon-menu,
+.icon-moon {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+
+.icon-son {
+    display: none;
+}
+
+.icon-son:hover {
+    color:#ffbe0b;
+}
+
+.icon-moon:hover {
+    color: #003049;
+}
+.logo {
+    display: inline-block;
+    width: 50px;
+}
+
+
+.home {
+    min-height: 54vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    background-image: url(https://images2.alphacoders.com/119/thumb-1920-1191759.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.home > h2 {
+    color: var(--color);
+    z-index: var(--zindex);
+    font-size: 1.8rem;
+    margin: 1rem;
+    line-height: 2.5rem;
+}
+
+.home > p {
+    color: var(--color);
+    z-index: var(--zindex);
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000067;
+}
+
+.content-blog {
+    padding: 0 1rem;
+}
+
+.cards {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-img {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.img-scale {
+    transition: transform 1s;
+}
+
+.img-scale:hover {
+    transform: scale(1.2);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-body > p {
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+}
+
+.card-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--btnActive);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s, trasform 0.5s, box-shadow 0.5s;
+    color: var(--color-btn);
+}
+
+.card-btn:hover {
+    background-color: var(--btn);
+    color: var(--color-btnHover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-btn:active {
+    transform: scale(0.95);
+}
+
+.img-parallax {
+    min-height: 100vh;
+    background-image: url(https://source.unsplash.com/random/1920×1080/?pets);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.adoptame {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.ola {
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+path {
+    transition: fill 0.5s;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer ul {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer > h2 {
+    font-size: 1.7rem;
+}
+
+footer > h2 > span {
+    font-size: 2rem;
+}
+
+@media (min-width:700px) {
+
+    .cards {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .home {
+        height: 70vh;
+    }
+
+    .home > h2 {
+        font-size: 2.8rem;
+    }
+
+    .content-blog {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .content-blog > h2 {
+        font-size: 2.5rem;
+        margin: 3rem 0;
+        padding: 1.4rem;
+    }
+    .card {
+        flex-direction: row;
+        height: 360px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card:nth-child(even){
+        flex-direction: row-reverse;
+    }
+
+    .card-btn {
+        width: 35%;
+        padding: 0.7rem;
+    }
+
+    .card-img{
+        width: 40%;
+        height: 100%;
+    } 
+
+    .card-img img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        width: 40%;
+    }
+
+    .menu {
+        background-color: transparent;
+        position: static;
+        width: auto;
+        flex-direction: row;
+        height: auto;
+
+    }
+
+    .icon-menu {
+        display: none;
+    }
+    
+    .navbar {
+        background-color: transparent;
+    }
+}
